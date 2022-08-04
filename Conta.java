@@ -3,7 +3,18 @@ public class Conta{
     private int conta;
     private double saldo;
     private double limite;
-    private String nomeTitular;
+    private Cliente titular;
+
+    public Conta(int agencia, int numeroConta) {
+        this.agencia = agencia;
+        this.conta = numeroConta;
+    }
+
+    public Conta (int agencia, int numeroConta, String titularDaConta ) {
+        this.agencia = agencia;
+        this.conta = numeroConta;
+        this.titular.setNome(titularDaConta);
+    }
 
     public void deposita(double valor) {
         this.saldo += valor;
@@ -28,22 +39,13 @@ public class Conta{
     public double getLimite() {
         return this.limite;
     }
-    public String getNomeTitular() {
-        return this.nomeTitular;
-    }
     public double getSaldo() {
         return this.saldo;
     }
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
-    }
-    public void setConta(int conta) {
-        this.conta = conta;
+    public Cliente getTitular(){
+        return titular;
     }
     public void setLimite(double limite) {
         this.limite = limite;
-    }
-    public void setNomeTitular(String nomeTitular) {
-        this.nomeTitular = nomeTitular;
     }
 }
