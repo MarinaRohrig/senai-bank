@@ -10,10 +10,9 @@ public class Conta{
         this.conta = numeroConta;
     }
 
-    public Conta (int agencia, int numeroConta, String titularDaConta ) {
-        this.agencia = agencia;
-        this.conta = numeroConta;
-        this.titular.setNome(titularDaConta);
+    public Conta (int agencia, int numeroConta, Cliente titular ) {
+        this(agencia, numeroConta);
+        this.titular = titular;
     }
 
     public void deposita(double valor) {
